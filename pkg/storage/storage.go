@@ -1,12 +1,12 @@
 package storage
 
 type Comment struct {
-	ID        int
-	NewsID    int
-	CommentID int
-	Content   string
-	Author    string
-	PubTime   int64
+	ID        int    `json:"id"`
+	NewsID    int    `json:"news_id"`
+	CommentID int    `json:"comment_id"`
+	Content   string `json:"content"`
+	Author    string `json:"author"`
+	PubTime   int64  `json:"pub_time"`
 }
 
 // Interface задаёт контракт на работу с БД.
