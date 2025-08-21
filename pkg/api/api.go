@@ -27,7 +27,7 @@ func New(db storage.Interface) *API {
 // Регистрация обработчиков API
 func (a *API) endpoints() {
 	// получить комментарии по n новости
-	a.router.HandleFunc("/comments/{n}", a.commentsHandler).Methods(http.MethodGet, http.MethodOptions)
+	a.router.HandleFunc("/{n}", a.commentsHandler).Methods(http.MethodGet, http.MethodOptions)
 	// добавить комментарий к новости или комментарию
 	a.router.HandleFunc("/addComment", a.addCommentHandler).Methods(http.MethodPost, http.MethodOptions)
 }

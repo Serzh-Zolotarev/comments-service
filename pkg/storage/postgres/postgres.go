@@ -21,13 +21,13 @@ func New(dbURL string) (*Store, error) {
 
 func (s *Store) Comments(n int) ([]storage.Comment, error) {
 	if n == 0 {
-		n = 30
+		n = 1
 	}
 	rows, err := s.db.Query(context.Background(), `
 	SELECT c.id, c.news_id, c.comment_id, c.content, c.author, c.pub_time 
 	FROM comments c
+	WHERE c.news_id = $1
 	ORDER BY id DESC 
-	LIMIT $1
 	`,
 		n,
 	)
