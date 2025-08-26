@@ -1,4 +1,4 @@
 {
-   "host_url": ":8080",
-   "postgres_db": "postgres://postgres:postgres@localhost:5432/comments"
+   "host_url": ":8082",
+   "postgres_db": "postgres://postgres:postgres@localhost:5433/comments"
 }
