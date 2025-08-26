@@ -32,8 +32,11 @@ func main() {
 
 	apiDb := api.New(db)
 
+	log.Println("[*] HTTP server is started on ", conf.HostURL)
 	err = http.ListenAndServe(conf.HostURL, apiDb.Router())
 	if err != nil {
 		log.Fatal(err)
+	} else {
+		log.Println("[*] HTTP server has been stopped. Reason: got sigterm")
 	}
 }

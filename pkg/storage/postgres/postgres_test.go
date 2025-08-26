@@ -9,7 +9,7 @@ import (
 )
 
 func TestNew(t *testing.T) {
-	_, err := New("postgres://postgres:postgres@localhost:5432/comments")
+	_, err := New("postgres://postgres:postgres@localhost:5433/comments")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -25,7 +25,7 @@ func TestStore_Comments(t *testing.T) {
 		Author:  "Test Author 2",
 		Content: cryptoRand.Text(),
 	}
-	db, err := New("postgres://postgres:postgres@localhost:5432/comments")
+	db, err := New("postgres://postgres:postgres@localhost:5433/comments")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -49,7 +49,7 @@ func TestStore_AddComment(t *testing.T) {
 		Author:  "Author 3",
 		Content: "Some Content",
 	}
-	db, err := New("postgres://postgres:postgres@localhost:5432/comments")
+	db, err := New("postgres://postgres:postgres@localhost:5433/comments")
 	if err != nil {
 		t.Fatal(err)
 	}
